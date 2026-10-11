@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #120b07;
+}
+.navbar {
+ 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: rgba(18, 11, 7, 0.4); /* Smoky tint: dark brown with 40% opacity */
+  backdrop-filter: blur(6px); /* Adds a gorgeous subtle frosted-glass blur effect */
+  z-index: 100;
+
+}
+
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #f3d5b5; 
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 1rem;
+ 
+}
+
+.nav-links a:hover {
+  color: #d4a373;
+}
+
+
+.nav-icons {
+  display: flex;
+  gap: 1.5rem;
+  cursor: pointer;
+  align-items: center;
+}
+
+.nav-icons a {
+  text-decoration: none;
+  color: inherit;
+}
+.nav-icon {
+  color:#fff
+}
+
+.hero-section {
+  
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 0 4rem;
+  padding-top: 5rem;
+  color: #fff;
+  background-color: #120b07; /* Fallback dark color */
+  background-image: 
+    /* Radial vignette to darken the edges and corners */
+    radial-gradient(circle at center, transparent 30%, rgba(18, 11, 7, 0.95) 85%),
+    /* Left-to-right gradient to keep text readable */
+    linear-gradient(to right, rgba(18, 11, 7, 0.98) 0%, rgba(18, 11, 7, 0.4) 65%), 
+    /* Your background image */
+    url('assets/homepage.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+    
+}
+.hero-content{
+    max-width:500px;
+    flex: 1;
+    padding: 2rem;}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: #d4a373;
+    margin-bottom: 1rem;
+    }
+ .hero-title{
+    font-size: 3.5rem;
+    font-style: normal;
+    color:#fdf0d5;
+    font-weight: 500;
+    line-height: 1.1;
+   
+ }  
+ .hero-buttons{
+    display:flex;
+    gap: 20px;
+    } 
+.hero-button{
+    background-color: #d4a373;
+    color:#fff;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition:background-color 0.3s ease;
+    outline: 1px solid #fff;
+
+}
+.hero-button:hover{
+    background-color: #8c5830;
+}
+.hero-description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+.scroll-btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 4rem;
+  width: 35px;
+  height: 45px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background-color: #1a0f0a; 
+  border-color: #d4af37;    
+  transform: translateY(3px);
+}
