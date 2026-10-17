@@ -1,0 +1,125 @@
+.contact-page {
+  padding: 8rem 4rem 4rem 4rem;
+  min-height: 100vh;
+  background-color: #120b07;
+  color: #f4eee1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-container {
+  display: flex;
+  gap: 4rem;
+  max-width: 1000px;
+  width: 100%;
+  background-color: #1a0f0a;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  color: #f4eee1;
+}
+
+.contact-info p {
+  color: #c5b5a4;
+  line-height: 1.6;
+}
+
+.contact-details-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.detail-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid #d4af37;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+}
+
+.detail-item h4 {
+  color: #d4af37;
+  margin-bottom: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.detail-item p {
+  color: #f4eee1;
+  font-size: 0.95rem;
+}
+
+.contact-form-wrapper {
+  flex: 1;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form h3 {
+  font-size: 1.5rem;
+  color: #d4af37;
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #c5b5a4;
+}
+
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+.success-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.success-card h3 {
+  font-size: 1.8rem;
+  color: #d4af37;
+}
+
+.success-card p {
+  color: #c5b5a4;
+  line-height: 1.6;
+}

@@ -46,7 +46,15 @@ html, body {
 }
 
 .nav-links a:hover {
-  color: #d4a373;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #d4af37; 
+  font-weight: 500;
 }
 
 

@@ -1,0 +1,178 @@
+.menu-page {
+  padding: 8rem 4rem 4rem 4rem; /* Adds top padding so it clears your absolute navbar */
+  color: #fff;
+  min-height: 100vh;
+  background-color: #120b07;
+}
+
+.category-tabs {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  margin: 2rem 0;
+  padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  background-color: #d4af37;
+  border-color: #d4af37;
+  color: #120b07;
+  font-weight: 600;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.food-card {
+  background-color: #1a0f0a; /* Dark chocolate card background */
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.food-thumb {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.food-info {
+  padding: 1.2rem;
+  color: #f4eee1; /* Light text for readability */
+}
+
+.food-info h3 {
+  color: #f4eee1;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.food-price {
+  color: #d4af37; /* Gold accent color for price */
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
+
+/* Dimmed background overlay covering the screen */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* The vertical rectangular popup box in the center */
+.modal-content {
+  background-color: #1a0f0a;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px; /* Keeps it as a nice vertical card shape */
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal close button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.close-btn:hover {
+  background: #d4af37;
+  color: #1a0f0a;
+}
+
+/* Image inside the modal */
+.modal-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Text and button wrapper inside modal */
+.modal-details {
+  padding: 1.5rem;
+  color: #f4eee1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.modal-details h2 {
+  font-size: 1.4rem;
+  color: #f4eee1;
+}
+
+.modal-price {
+  color: #d4af37;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modal-desc {
+  font-size: 0.95rem;
+  color: #c5b5a4;
+  line-height: 1.4;
+}
+
+/* Action button inside modal */
+.reserve-dish-btn {
+  background-color: #d4af37;
+  color: #120b07;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-dish-btn:hover {
+  background-color: #f4e8d8;
+}

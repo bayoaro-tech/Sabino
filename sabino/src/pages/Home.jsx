@@ -1,6 +1,22 @@
+import React, { useState, useEffect } from "react";
+import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
 
 function Home() {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 800);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    // Show loading spinner if it's still loading
+    if (isLoading) {
+        return <Loading />;
+    }
     return (
         <div>
             <div className="hero-section">
@@ -13,15 +29,10 @@ function Home() {
                         <Link to="/reservations" className="hero-button">Reserve a Table</Link>
                     </div>
                 </div>
-                <a href="/about" className="scroll-btn">
+                <Link to="/menu" className="scroll-btn">
                     <span className="scroll-icon">↓</span>
-                </a>
+                </Link>
             </div>
-                    
-                
-
-            
-
         </div>
     );
 }
