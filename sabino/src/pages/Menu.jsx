@@ -47,7 +47,7 @@ function Menu() {
       };
     });
   }, []);
-  // If it's still loading, show the Loading component instead of the page
+ 
   if (isLoading) {
     return <Loading />;
   }
