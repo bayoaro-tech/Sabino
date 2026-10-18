@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { menuItems } from "../data/menuData.js"
-import Loading from "../components/Loading"
+import { menuItems } from "../data/menuData.js";
+import Loading from "../components/Loading";
 import "../Menu.css";
 function Menu() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedItem, setSelectedItem] = useState(null);
 
-  
   const categories = [
     "all",
     "swallow",
@@ -22,19 +21,36 @@ function Menu() {
     activeCategory === "all"
       ? menuItems
       : menuItems.filter((item) => item.category === activeCategory);
-      useEffect(() => {
-        // Simulate a brief loading delay (e.g., 800 milliseconds)
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 800);
+  useEffect(() => {
+    const imagesToLoad = menuItems.map((item) => item.image);
+    let loadedCount = 0;
 
-        return () => clearTimeout(timer);
-    }, []);
-
-    // If it's still loading, show the Loading component instead of the page
-    if (isLoading) {
-        return <Loading />;
+    if (imagesToLoad.length === 0) {
+      setIsLoading(false);
+      return;
     }
+
+    imagesToLoad.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === imagesToLoad.length) {
+          setIsLoading(false);
+        }
+      };
+      img.onerror = () => {
+        loadedCount++;
+        if (loadedCount === imagesToLoad.length) {
+          setIsLoading(false);
+        }
+      };
+    });
+  }, []);
+  // If it's still loading, show the Loading component instead of the page
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="menu-page">
       <main className="page">
@@ -95,7 +111,6 @@ function Menu() {
                 experience.
               </p>
 
-              
               <button className="reserve-dish-btn">
                 Add to Reservation Inquiry
               </button>
