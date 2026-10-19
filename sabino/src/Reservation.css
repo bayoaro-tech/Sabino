@@ -134,3 +134,96 @@
   color: #c5b5a4;
   line-height: 1.6;
 }
+.inquiry-floating-bar {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f1610;
+  border: 1px solid #d4af37;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  width: 90%;
+  max-width: 750px;
+}
+
+.inquiry-names {
+  color: #d4af37;
+  font-size: 0.9rem;
+  margin-left: 6px;
+}
+
+.inquiry-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.clear-inquiry-btn {
+  background: transparent;
+  color: #aaa;
+  border: none;
+  cursor: pointer;
+}
+
+.proceed-inquiry-btn {
+  background-color: #d4af37;
+  color: #120d0a;
+  font-weight: 600;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.selected-dishes-box {
+  background-color: rgba(212, 175, 55, 0.08);
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.selected-dishes-box label {
+  display: block;
+  color: #d4af37;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.selected-dishes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.selected-dish-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.remove-dish-btn {
+  background: transparent;
+  border: none;
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 6px;
+}
+
+.selected-dishes-total {
+  margin: 8px 0 0 0;
+  text-align: right;
+  color: #d4af37;
+  font-size: 0.95rem;
+}

@@ -1,11 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { menuItems } from "../data/menuData.js";
 import Loading from "../components/Loading";
+import { useNavigate } from "react-router-dom";
 import "../Menu.css";
 function Menu() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate();
+// 1. State to hold the list of reserved dishes (loads from localStorage)
+  const [reservedDishes, setReservedDishes] = useState(() => {
+    const saved = localStorage.getItem("sabino_inquiry_dishes");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  // 2. Save to localStorage whenever reservedDishes changes
+  useEffect(() => {
+    localStorage.setItem("sabino_inquiry_dishes", JSON.stringify(reservedDishes));
+  }, [reservedDishes]);
+
+  // 3. Function to add the dish and close the modal
+  const handleAddToInquiry = (item) => {
+    const isAlreadyAdded = reservedDishes.some((dish) => dish.name === item.name);
+
+    if (!isAlreadyAdded) {
+      setReservedDishes((prevDishes) => [...prevDishes, item]);
+    }
+
+    // Close the modal after adding
+    setSelectedItem(null);
+  };
 
   const categories = [
     "all",
@@ -111,14 +135,42 @@ function Menu() {
                 experience.
               </p>
 
-              <button className="reserve-dish-btn">
+              <button className="reserve-dish-btn" onClick={() => handleAddToInquiry(selectedItem)}>
                 Add to Reservation Inquiry
               </button>
             </div>
           </div>
         </div>
       )}
+      {/* Floating Inquiry Bar */}
+      {reservedDishes.length > 0 && (
+        <div className="inquiry-floating-bar">
+          <div className="inquiry-info">
+            <span>
+              <strong>{reservedDishes.length}</strong> dish(es) added:{" "}
+            </span>
+            <span className="inquiry-names">
+              {reservedDishes.map((d) => d.name).join(", ")}
+            </span>
+          </div>
+          <div className="inquiry-actions">
+            <button
+              className="clear-inquiry-btn"
+              onClick={() => setReservedDishes([])}
+            >
+              Clear
+            </button>
+            <button
+              className="proceed-inquiry-btn"
+              onClick={() => navigate("/reservations")}
+            >
+              Proceed to Reservation &rarr;
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
+  
 }
 export default Menu;

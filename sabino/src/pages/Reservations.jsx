@@ -1,11 +1,36 @@
 import React, { useState } from "react";
-import "../Reservations.css";
+import "../Reservation.css";
 
 function Reservations() {
+  
+  // Load selected dishes from localStorage
+  const [selectedDishes, setSelectedDishes] = useState(() => {
+    const saved = localStorage.getItem("sabino_inquiry_dishes");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  // Remove a single dish from the inquiry list
+  const removeDish = (dishName) => {
+    const updated = selectedDishes.filter((d) => d.name !== dishName);
+    setSelectedDishes(updated);
+    localStorage.setItem("sabino_inquiry_dishes", JSON.stringify(updated));
+  };
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Stops the page from refreshing
+
+    // Clear the saved dishes after booking is confirmed
+    setSelectedDishes([]);
+    localStorage.removeItem("sabino_inquiry_dishes");
+
+    // Show confirmation message
+    setIsSubmitted(true);
+  };
   return (
     <div className="reservations-page">
       <div className="reservations-container">
-        {/* Left Side: Restaurant Info & Vibe */}
+       
         <div className="reservations-info">
           <h2>Book Your Experience</h2>
           <p>
@@ -20,10 +45,57 @@ function Reservations() {
           </div>
         </div>
 
-        {/* Right Side: The Reservation Form */}
+        
         <div className="reservations-form-wrapper">
-          <form className="reservations-form">
+          <form className="reservations-form" onSubmit={handleSubmit}>
             <h3>Table Reservation</h3>
+            {isSubmitted && (
+    <div
+      style={{
+        backgroundColor: "rgba(76, 175, 80, 0.15)",
+        border: "1px solid #4caf50",
+        color: "#81c784",
+        padding: "12px",
+        borderRadius: "8px",
+        marginBottom: "16px",
+        textAlign: "center",
+      }}
+    >
+      🎉 Reservation confirmed! We have received your table and dish inquiry.
+    </div>
+  )}
+
+          {/* Display Pre-Selected Menu Dishes */}
+          {selectedDishes.length > 0 && (
+            <div className="selected-dishes-box">
+              <label>Selected Dishes for Your Reservation:</label>
+              <ul className="selected-dishes-list">
+                {selectedDishes.map((dish, index) => (
+                  <li key={index} className="selected-dish-item">
+                    <span>
+                      {dish.name} — <strong>₦{dish.price.toLocaleString()}</strong>
+                    </span>
+                    <button
+                      type="button"
+                      className="remove-dish-btn"
+                      onClick={() => removeDish(dish.name)}
+                    >
+                      &times;
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <p className="selected-dishes-total">
+                Estimated Dish Total:{" "}
+                <strong>
+                  ₦
+                  {selectedDishes
+                    .reduce((sum, dish) => sum + dish.price, 0)
+                    .toLocaleString()}
+                </strong>
+              </p>
+            </div>
+          )}
 
             <div className="form-group">
               <label>Full Name</label>

@@ -13,7 +13,7 @@ function Home() {
         return () => clearTimeout(timer);
     }, []);
 
-    // Show loading spinner if it's still loading
+   
     if (isLoading) {
         return <Loading />;
     }
