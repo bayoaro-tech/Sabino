@@ -28,11 +28,11 @@ function Contact() {
                         </div>
                         <div className="detail-item">
                             <h4>Phone</h4>
-                            <p>+234 800 SABINO (722466)</p>
+                            <p>+234 000 000 0000</p>
                         </div>
                         <div className="detail-item">
                             <h4>Email</h4>
-                            <p>concierge@sabinocuisine.com</p>
+                            <p>bayo@sabinocuisine.com</p>
                         </div>
                     </div>
                 </div>
