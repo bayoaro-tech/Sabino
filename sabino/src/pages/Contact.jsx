@@ -24,7 +24,7 @@ function Contact() {
                     <div className="contact-details-box">
                         <div className="detail-item">
                             <h4>Location</h4>
-                            <p>Uyo, Akwa Ibom State, Nigeria</p>
+                            <p>164 Ikot Ekpene Road,Uyo, Akwa Ibom State, Nigeria</p>
                         </div>
                         <div className="detail-item">
                             <h4>Phone</h4>
