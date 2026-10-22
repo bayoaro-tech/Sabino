@@ -227,3 +227,37 @@
   color: #d4af37;
   font-size: 0.95rem;
 }
+/* ================= RESPONSIVE RESERVATIONS STYLES ================= */
+
+@media (max-width: 768px) {
+  .reservations-page {
+    padding: 30px 16px;
+  }
+
+  /* Stack the "Book Your Experience" text above the Reservation Form */
+  .reservations-container {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .reservations-info,
+  .reservations-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .reservations-form-wrapper {
+    padding: 20px 16px;
+  }
+
+  /* Stack any side-by-side form inputs (like Date & Time) on mobile */
+  .form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .selected-dish-item {
+    font-size: 0.85rem;
+  }
+}

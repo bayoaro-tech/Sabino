@@ -1,4 +1,3 @@
-import React from "react";
 import "../Loading.css"; // Optional CSS for styling
 
 function Loading() {

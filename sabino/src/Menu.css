@@ -176,3 +176,75 @@
 .reserve-dish-btn:hover {
   background-color: #f4e8d8;
 }
+/* ================= RESPONSIVE MENU STYLES ================= */
+
+/* Tablets & Smaller Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile Devices & Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Allow category pills to scroll horizontally without wrapping messy */
+  .category-buttons,
+  .menu-categories {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 2 cards per row on larger phones/small tablets */
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  /* Make the dish modal fit mobile screens */
+  .modal-content {
+    width: 92%;
+    max-width: 400px;
+    padding: 16px;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+
+  .modal-img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* Stack the floating inquiry bar on mobile */
+  .inquiry-floating-bar {
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 14px 16px;
+    gap: 12px;
+    bottom: 12px;
+    width: 94%;
+    text-align: center;
+  }
+
+  .inquiry-actions {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .proceed-inquiry-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+/* Small Mobile Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  /* 1 full-width card per row on small phones */
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { menuItems } from "../data/menuData.js";
 import Loading from "../components/Loading";
 import { useNavigate } from "react-router-dom";
 import "../Menu.css";
 function Menu() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => menuItems.length > 0);
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
@@ -50,7 +50,6 @@ function Menu() {
     let loadedCount = 0;
 
     if (imagesToLoad.length === 0) {
-      setIsLoading(false);
       return;
     }
 

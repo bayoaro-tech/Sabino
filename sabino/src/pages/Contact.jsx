@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../Contact.css"; // We'll create this CSS file next
 
 function Contact() {

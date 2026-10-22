@@ -10,15 +10,10 @@ import Contact from "./pages/Contact";
 
 
 import NotFound from "./pages/NotFound";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { useState } from "react";
-
-
 
 function App() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
   return (
     <div>
       <Navbar />

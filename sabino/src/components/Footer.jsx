@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "../Footer.css"; // We'll style it right after
 
