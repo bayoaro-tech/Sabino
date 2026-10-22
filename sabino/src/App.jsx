@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { Analytics } from '@vercel/analytics/react';
 import "./App.css";
 
 function ScrollToTop() {
@@ -45,6 +46,7 @@ function App() {
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer/>
+      <Analytics />
     </div>
   )
 
