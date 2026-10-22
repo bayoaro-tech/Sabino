@@ -10,12 +10,24 @@ import Contact from "./pages/Contact";
 
 
 import NotFound from "./pages/NotFound";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import "./App.css";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
     <div>
+      <ScrollToTop />
       <Navbar />
 
       
