@@ -40,8 +40,8 @@ function Reservations() {
           </p>
           <div className="info-box">
             <h4>Opening Hours</h4>
-            <p>Tuesday – Sunday: 12:00 PM – 10:00 PM</p>
-            <p>Monday: Closed</p>
+            <p>Monday – Saturday: 9:00 AM – 10:00 PM</p>
+            <p>Sunday: Closed</p>
           </div>
         </div>
 
@@ -65,7 +65,7 @@ function Reservations() {
     </div>
   )}
 
-          {/* Display Pre-Selected Menu Dishes */}
+         
           {selectedDishes.length > 0 && (
             <div className="selected-dishes-box">
               <label>Selected Dishes for Your Reservation:</label>
