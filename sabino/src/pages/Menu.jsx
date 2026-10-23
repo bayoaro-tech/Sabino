@@ -8,18 +8,19 @@ function Menu() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
-// 1. State to hold the list of reserved dishes (loads from localStorage)
+
+
   const [reservedDishes, setReservedDishes] = useState(() => {
     const saved = localStorage.getItem("sabino_inquiry_dishes");
     return saved ? JSON.parse(saved) : [];
   });
 
-  // 2. Save to localStorage whenever reservedDishes changes
+  
   useEffect(() => {
     localStorage.setItem("sabino_inquiry_dishes", JSON.stringify(reservedDishes));
   }, [reservedDishes]);
 
-  // 3. Function to add the dish and close the modal
+ 
   const handleAddToInquiry = (item) => {
     const isAlreadyAdded = reservedDishes.some((dish) => dish.name === item.name);
 
@@ -27,7 +28,7 @@ function Menu() {
       setReservedDishes((prevDishes) => [...prevDishes, item]);
     }
 
-    // Close the modal after adding
+    
     setSelectedItem(null);
   };
 
@@ -141,7 +142,8 @@ function Menu() {
           </div>
         </div>
       )}
-      {/* Floating Inquiry Bar */}
+      
+      
       {reservedDishes.length > 0 && (
         <div className="inquiry-floating-bar">
           <div className="inquiry-info">

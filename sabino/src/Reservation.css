@@ -92,6 +92,19 @@
   border-color: #d4af37;
 }
 
+.form-group input[type="date"],
+.form-group input[type="time"] {
+  accent-color: #d4af37;
+  color-scheme: dark;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator,
+.form-group input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(75%) sepia(45%) saturate(650%) hue-rotate(5deg)
+    brightness(95%) contrast(90%);
+  cursor: pointer;
+}
+
 .form-row {
   display: flex;
   gap: 1rem;
@@ -227,14 +240,14 @@
   color: #d4af37;
   font-size: 0.95rem;
 }
-/* ================= RESPONSIVE RESERVATIONS STYLES ================= */
+
 
 @media (max-width: 768px) {
   .reservations-page {
     padding: 30px 16px;
   }
 
-  /* Stack the "Book Your Experience" text above the Reservation Form */
+ 
   .reservations-container {
     flex-direction: column;
     grid-template-columns: 1fr;
@@ -251,7 +264,7 @@
     padding: 20px 16px;
   }
 
-  /* Stack any side-by-side form inputs (like Date & Time) on mobile */
+  
   .form-row {
     flex-direction: column;
     gap: 16px;

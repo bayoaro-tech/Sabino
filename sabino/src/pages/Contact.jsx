@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../Contact.css"; // We'll create this CSS file next
+import "../Contact.css"; 
 
 function Contact() {
     const [isSent, setIsSent] = useState(false);
@@ -13,7 +13,7 @@ function Contact() {
         <div className="contact-page">
             <div className="contact-container">
                 
-                {/* Left Side: Contact Info & Location */}
+               
                 <div className="contact-info">
                     <h2>Get in Touch</h2>
                     <p>
@@ -37,7 +37,7 @@ function Contact() {
                     </div>
                 </div>
 
-                {/* Right Side: Message Form or Success State */}
+                
                 <div className="contact-form-wrapper">
                     {isSent ? (
                         <div className="success-card">

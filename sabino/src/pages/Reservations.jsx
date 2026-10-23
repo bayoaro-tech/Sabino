@@ -3,13 +3,13 @@ import "../Reservation.css";
 
 function Reservations() {
   
-  // Load selected dishes from localStorage
+ 
   const [selectedDishes, setSelectedDishes] = useState(() => {
     const saved = localStorage.getItem("sabino_inquiry_dishes");
     return saved ? JSON.parse(saved) : [];
   });
 
-  // Remove a single dish from the inquiry list
+ 
   const removeDish = (dishName) => {
     const updated = selectedDishes.filter((d) => d.name !== dishName);
     setSelectedDishes(updated);
@@ -18,13 +18,13 @@ function Reservations() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Stops the page from refreshing
+    e.preventDefault();
+    e.currentTarget.reset();
 
-    // Clear the saved dishes after booking is confirmed
     setSelectedDishes([]);
     localStorage.removeItem("sabino_inquiry_dishes");
 
-    // Show confirmation message
+    
     setIsSubmitted(true);
   };
   return (
